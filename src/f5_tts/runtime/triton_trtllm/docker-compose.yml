@@ -8,7 +8,8 @@ services:
       - "8102:8002"
     volumes:
       - "/home/aiuser/hf_models:/workspace/model_files"
-    
+    #i've use command to download model files manually:   huggingface-cli download SWivid/F5-TTS --repo-type "model" --local-dir "/home/aiuser/hf_models" --local-dir-use-symlinks False
+
     environment:
       - PYTHONIOENCODING=utf-8
       - MODEL_ID=${MODEL_ID}
