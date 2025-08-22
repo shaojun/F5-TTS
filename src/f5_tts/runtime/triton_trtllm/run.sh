@@ -8,7 +8,7 @@ fi
 echo "Start stage: $stage, Stop stage: $stop_stage, Model: $model"
 export CUDA_VISIBLE_DEVICES=0
 
-F5_TTS_HF_DOWNLOAD_PATH=./F5-TTS
+F5_TTS_HF_DOWNLOAD_PATH=/workspace/model_files
 F5_TTS_TRT_LLM_CHECKPOINT_PATH=./trtllm_ckpt
 F5_TTS_TRT_LLM_ENGINE_PATH=./f5_trt_llm_engine
 
@@ -17,7 +17,8 @@ model_repo=./model_repo
 
 if [ $stage -le 0 ] && [ $stop_stage -ge 0 ]; then
     echo "Downloading f5 tts from huggingface"
-    huggingface-cli download SWivid/F5-TTS --local-dir $F5_TTS_HF_DOWNLOAD_PATH
+    echo "direct using /workspace/model_files"
+    #huggingface-cli download SWivid/F5-TTS --local-dir $F5_TTS_HF_DOWNLOAD_PATH
 
 fi
 
