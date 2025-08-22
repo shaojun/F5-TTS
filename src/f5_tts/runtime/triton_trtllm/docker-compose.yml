@@ -6,6 +6,9 @@ services:
       - "8000:8000"
       - "8001:8001"
       - "8002:8002"
+    volumes:
+      - "/root/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca:/workspace/model_files"
+    
     environment:
       - PYTHONIOENCODING=utf-8
       - MODEL_ID=${MODEL_ID}
